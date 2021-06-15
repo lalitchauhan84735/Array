@@ -1,23 +1,26 @@
 
 
  
-#include <iostream.h>
+#include <bits/stdc++.h>
 using namespace std;
- 
-void findNumbers(int N)
-{
-    for (int i = 1; i <= N / 2; i++) {
- 
-        cout << i << ", " << -i << ", ";
-    }
- 
-    if (N % 2 == 1)
-        cout << 0;
+void print_vector(vector<int> v){
+   cout << "[";
+   for(int i = 0; i<v.size(); i++){
+      cout << v[i] << ", ";
+   }
+   cout << "]"<<endl;
 }
- 
-int main()
-{
-    int N = 10;
- 
-    findNumbers(N);
-}
+class Solution {
+   public:
+      vector<int> sumZero(int n) {
+         vector <int> ans(n);
+         int x = 0;
+         for(int i = 0; i < n - 1; i++){
+            ans[i] = (i + 1);
+            x += (i + 1);
+         }
+         ans[n - 1] = -x;
+         return ans;
+      }
+};
+
